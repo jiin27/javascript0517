@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코드의재사용</title>
+    <script>
+        /*
+        ★ 함수란?
+            특정 코드 영역에 이름을 붙여놓은 단위
+        ★ 사용 이유?
+            한 번 작성된 코드를 또 써먹기 위해
+            코드의 재사용을 위해
+        ★ 정의 방법(syntex)
+            function 키워드 이름(){
+                또 써먹을 로직 작성
+            }
+
+        */
+
+        //3단을 출력해보기
+        //또써먹을단위
+
+        //사용자(=개발자) 정의 함수
+        // function dan(변수){
+        //     for (let i = 1; i <= 9; i++) {
+        //         document.write("3*" + i + "=" + 3 * i + "<br>");
+        //     }
+        // }
+
+        //매개변수(=지역 변수): 함수 호출시 전달되는 데이터를 함수내부에서 사용될 수 있도록
+        //그 값을 담아놓는 변수
+        /*
+        function dan(n){
+            for (let i = 1; i <= 9; i++) {
+                document.write(n+"*" + i + "=" + n* i + "<br>");
+            }
+        }
+
+        for(let i=1; i<=2000; i++){
+            dan(i);
+        }
+        */
+
+        //1) return의 의미: 실행부가 이 함수를 호출한 곳으로 되돌아 가게 만든다.
+        //2) 특히 return 데이터를 명시할 수 있는데, 이때는 실행부가 이 함수를 호출한 곳으로 되돌아가면서
+        //     return뒤에 명시된 데이터를 가지고 되돌아 간다.
+        //  -> return에 값을 명시한 함수를 가리켜 '리턴값이 있는 함수'라 한다.
+        /*
+        function test(){
+            return 3;
+        }
+
+        alert(test()); //사용된 함수는 2개. 소괄호 붙은 alert도 함수. 
+        //함수는 항상 안쪽 부터 실행!
+        */
+
+        function test(n){
+            return n*2;
+        }
+
+        alert(test(3));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

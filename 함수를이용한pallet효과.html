@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수를이용한pallet효과</title>
+    <style>
+        #wrapper{
+            width: 700px;
+            height: 500px;
+            margin: auto;
+            border: 2px solid beige;
+        }
+        #header{
+            width: 100%;
+            height: 100px;
+            background: bisque;
+            text-align: center;
+        }
+        #content{
+            width: 100%;
+            height: 400px;
+            background: rgb(199, 227, 228);
+        }
+        #header button{
+            width: 96px;
+            height: 96px;
+            border: 1px solid beige;
+        }
+    </style>
+    <script>
+        function createButton(){
+            //버튼 7개를 동적으로 생성하여 header div영역에 자식으로 추가하자
+            for(let i=1; i<=7; i++){
+                let bt=document.createElement("button"); //body태그에 버튼 태그를 만든 것.
+
+                if(i==1){
+                    bt.innerText="red"; //<button>red</button>
+                    bt.style.background="red";
+                }else if(i==2){
+                    bt.innerText="org"; //<button>red</button>
+                    bt.style.background="orange";
+                }else if(i==3){
+                    bt.innerText="yel"; //<button>red</button>
+                    bt.style.background="yellow";
+                }else if(i==4){
+                    bt.innerText="grn"; //<button>red</button>
+                    bt.style.background="green";
+                }else if(i==5){
+                    bt.innerText="blue"; //<button>red</button>
+                    bt.style.background="blue";
+                }else if(i==6){
+                    bt.innerText="navy"; //<button>red</button>
+                    bt.style.background="navy";
+                }else if(i==7){
+                    bt.innerText="purple"; //<button>red</button>
+                    bt.style.background="purple";
+                }
+                document.getElementById("header"); //header 얻기
+                header.appendChild(bt);
+
+                /*버튼에 배경색이 들어온 후에 클릭 이벤트가 오는 게 맞는 순서이기 때문에 이벤트 핸들러를 버튼 배경색 지정 아래로 해야 한다.*/
+                
+                //반복문 내 각 버튼들에 이벤트 연결
+                bt.addEventListener("click", function(){
+                    //문서 내 content의 배경색을 방금 선택한 버튼의 배경색과 일치시킨다.
+                    let content=document.getElementById("content");
+                    console.log(bt.style.background);
+                    
+                    if(i==1){
+                        content.style.background="red";
+                    }else if(i==2){
+                        content.style.background="orange";
+                    }else if(i==3){
+                        content.style.background="yellow";
+                    }else if(i==4){
+                        content.style.background="green";
+                    }else if(i==5){
+                        content.style.background="blue";
+                    }else if(i==6){
+                        content.style.background="navy";
+                    }else if(i==7){
+                        content.style.background="purple";
+                    }
+                    
+                });
+
+
+            }//for문의 종료
+        }
+
+        //문서가 로드되면(window는 생략 가능) 익명 함수가 동작함
+        addEventListener("load", function(){
+            //버튼 7개를 화면에 등장.
+            createButton();
+        });
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header"></div>
+        <div id="content"></div>
+    </div>
+</body>
+</html>
